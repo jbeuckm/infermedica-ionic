@@ -1,10 +1,36 @@
 <div>
 
-    <label for="sex">Sex</label>
-    <select name="sex" ng-model="user.sex">
-      <option value="null">opt-out</option>
-      <option value="M">Male</option>
-      <option value="F">Female</option>
-    </select>
+    <label class="item item-input">
+        <span class="input-label">Sex</span>
+        <select name="sex" ng-model="user.sex">
+            <option value="null">opt-out</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+    </label>
+
+    <label class="item item-input">
+        <span class="input-label">Age</span>
+        <input type="number" ng-model="user.age">
+    </label>
+
+    <label class="item item-input">
+        <span class="input-label">What's wrong?</span>
+
+        <label class="item item-input">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="search" placeholder="Headache" ng-model="search">
+        </label>
+
+    </label>
+
+    <div class="list">
+
+        <a class="item item-icon-right" href="#" ng-repeat="observation in searchResults" ng-click="addObservation(observation.id)">
+    {{ observation.name }}
+    <i class="icon ion-plus-circled"></i>
+  </a>
+
+    </div>
 
 </div>

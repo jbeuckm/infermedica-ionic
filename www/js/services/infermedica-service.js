@@ -4,6 +4,14 @@ angular.module('infermedica.services', []).service('Infermedica', function ($q, 
 
     var server = "https://api.infermedica.com/v1";
 
+    function defaultHeaders() {
+        return {
+            'Content-Type': 'application/json',
+            app_id: _app_id,
+            app_key: _app_key
+        };
+    }
+
     return {
 
         init: function (app_id, app_key) {
@@ -11,16 +19,30 @@ angular.module('infermedica.services', []).service('Infermedica', function ($q, 
             _app_key = app_key;
         },
 
+        lookup: function (phrase, sex) {
+
+
+            var req = {
+                method: 'GET',
+                url: server + "/lookup",
+                headers: defaultHeaders(),
+                params: {
+                    sex: sex,
+                    phrase: phrase
+                }
+            }
+
+            return $http(req);
+
+
+        },
+
         observations: function () {
 
             var req = {
                 method: 'GET',
                 url: server + "/observations",
-                headers: {
-                    'Content-Type': 'application/json',
-                    app_id: _app_id,
-                    app_key: _app_key
-                }
+                headers: defaultHeaders()
             }
 
             return $http(req);

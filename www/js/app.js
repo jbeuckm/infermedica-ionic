@@ -27,11 +27,6 @@ angular.module('infermedica', ['ionic', 'infermedica.services', 'infermedica.con
         }).success(function (data, status, headers, config) {
             credentials = data;
             Infermedica.init(credentials.infermedica.app_id, credentials.infermedica.app_key);
-
-            Infermedica.observations().success(function (data, status, headers, config) {
-
-                console.log(data, status, headers, config);
-            });
         });
 
 
