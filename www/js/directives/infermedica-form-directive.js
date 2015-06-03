@@ -67,13 +67,14 @@ angular.module('infermedica.directives', ['infermedica.services'])
                     Infermedica.diagnosis($scope.user.age, $scope.user.sex, $scope.evidence).success(function (data, status) {
                         console.log(data);
 
+                        $scope.conditions = data.conditions;
                         handleQuestion(data.question);
                     });
                 }
 
                 function handleQuestion(question) {
 
-                    $scope.question = question;
+                        $scope.question = question;
 
                     $ionicModal.fromTemplateUrl('templates/infermedica-question-modal.html', {
                         scope: $scope,

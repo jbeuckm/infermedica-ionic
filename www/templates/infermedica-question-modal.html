@@ -8,5 +8,15 @@
         <select ng-change="answerQuestion(answer)" ng-model="answer">
             <option ng-repeat="item in question.items" value="{{item.id}}">{{ item.name }}</option>
         </select>
+        
+        You might have...
+        
+    <div class="list">
+
+        <a class="item" href="#" ng-repeat="condition in conditions">
+            {{ condition.name }} ({{ condition.probability | percentage:1 }})
+        </a>
+        </div>
+        
     </ion-content>
   </ion-modal-view>
