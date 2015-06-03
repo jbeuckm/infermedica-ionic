@@ -47,6 +47,23 @@ angular.module('infermedica.services', []).service('Infermedica', function ($q, 
 
             return $http(req);
 
+        },
+        
+        diagnosis : function(age, sex, evidence) {
+            
+            var req = {
+                method: 'POST',
+                url: server + "/diagnosis",
+                headers: defaultHeaders(),
+                data: {
+                    sex: sex,
+                    age: age,
+                    evidence: evidence
+                }
+            }
+
+            return $http(req);
+
         }
 
     };

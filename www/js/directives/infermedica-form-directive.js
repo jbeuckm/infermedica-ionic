@@ -44,14 +44,21 @@ angular.module('infermedica.directives', ['infermedica.services'])
                 $scope.evidence = [];
 
                 $scope.addObservation = function (id) {
+                    
                     $scope.evidence.push({
                         "id": id,
                         "choice_id": "present",
-                        "observed_at": new Date()
+//                        "observed_at": new Date()
                     });
                     
                     $scope.search = "";
                     $scope.searchResults = [];
+                    
+                    if (!$scope.user) return;
+                    
+                    Infermedica.diagnosis($scope.user.age, getSex(), $scope.evidence).success(function (data, status, headers, config) {
+                        console.log(data);
+                    });
                 }
 
             }
