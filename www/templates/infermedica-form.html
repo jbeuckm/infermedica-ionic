@@ -1,5 +1,6 @@
 <div>
 
+
     <label class="item item-input">
         <span class="input-label">Sex</span>
         <select name="sex" ng-model="user.sex">
@@ -14,6 +15,16 @@
         <input type="number" ng-model="user.age">
     </label>
 
+    <div class="list">
+
+        <a class="item item-icon-right" href="#" ng-repeat="observation in evidence" ng-click="removeObservation(observation)">
+            {{ observation.name }}
+            <i class="icon ion-close-circled"></i>
+        </a>
+
+    </div>
+
+
     <label class="item item-input">
         <span class="input-label">What's wrong?</span>
 
@@ -26,7 +37,7 @@
 
     <div class="list">
 
-        <a class="item item-icon-right" href="#" ng-repeat="observation in searchResults" ng-click="addObservation(observation.id)">
+        <a class="item item-icon-right" href="#" ng-repeat="observation in searchResults" ng-click="addObservation(observation)">
     {{ observation.name }}
     <i class="icon ion-plus-circled"></i>
   </a>
