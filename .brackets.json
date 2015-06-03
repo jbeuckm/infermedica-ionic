@@ -1,0 +1,7 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/Users/jpbeuc1/Documents/infermedica/www/js/services/infermedica.js",
+        "/Users/jpbeuc1/Documents/infermedica/www/js/app.js",
+        "/Users/jpbeuc1/Documents/infermedica/platforms/ios/build/emulator/infermedica.app/www/plugins/org.apache.cordova.device/www/device.js"
+    ]
+}
