@@ -5,8 +5,8 @@
     <ion-content>
       {{ question.text }}
         
-        <select ng-modal="answer">
-            <option ng-repeat="item in question.items">{{ item.name }}</option>
+        <select ng-change="answerQuestion(answer)" ng-model="answer">
+            <option ng-repeat="item in question.items" value="{{item.id}}">{{ item.name }}</option>
         </select>
     </ion-content>
   </ion-modal-view>

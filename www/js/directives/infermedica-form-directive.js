@@ -20,7 +20,10 @@ angular.module('infermedica.directives', ['infermedica.services'])
                     }
                 }
 
-                $scope.$watch('user', getDiagnosis, true);
+                $scope.$watch('user', function () {
+                    clearTimeout(searchTimeout);
+                    searchTimeout = setTimeout(getDiagnosis, 1000);
+                }, true);
 
                 $scope.$watch('search', function (val) {
 
@@ -69,7 +72,7 @@ angular.module('infermedica.directives', ['infermedica.services'])
                 }
 
                 function handleQuestion(question) {
-                    
+
                     $scope.question = question;
 
                     $ionicModal.fromTemplateUrl('templates/infermedica-question-modal.html', {
@@ -96,6 +99,15 @@ angular.module('infermedica.directives', ['infermedica.services'])
                     $scope.$on('modal.removed', function () {
                         // Execute action
                     });
+                }
+
+                $scope.answerQuestion = function (value) {
+                    $scope.closeModal();
+                    
+                    var item = $scope.question.items.filter(function(d){ return d.id == value; }).pop();
+                    console.log(item);
+                    
+                    $scope.addObservation(item);
                 }
 
             }
