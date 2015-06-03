@@ -69,6 +69,8 @@ angular.module('infermedica.directives', ['infermedica.services'])
                 }
 
                 function handleQuestion(question) {
+                    
+                    $scope.question = question;
 
                     $ionicModal.fromTemplateUrl('templates/infermedica-question-modal.html', {
                         scope: $scope,
