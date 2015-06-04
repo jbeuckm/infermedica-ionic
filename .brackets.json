@@ -2,6 +2,9 @@
     "jscodehints.detectedExclusions": [
         "/Users/jpbeuc1/Documents/infermedica/www/js/services/infermedica.js",
         "/Users/jpbeuc1/Documents/infermedica/www/js/app.js",
-        "/Users/jpbeuc1/Documents/infermedica/platforms/ios/build/emulator/infermedica.app/www/plugins/org.apache.cordova.device/www/device.js"
+        "/Users/jpbeuc1/Documents/infermedica/platforms/ios/build/emulator/infermedica.app/www/plugins/org.apache.cordova.device/www/device.js",
+        "/Users/innovator/Documents/infermedica-ionic/www/lib/ionic/js/ionic.min.js",
+        "/Users/innovator/Documents/infermedica-ionic/www/lib/ionic/js/ionic.js",
+        "/Users/innovator/Documents/infermedica-ionic/www/js/app.js"
     ]
 }

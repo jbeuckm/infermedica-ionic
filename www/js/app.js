@@ -23,10 +23,14 @@ angular.module('infermedica', ['ionic', 'infermedica.services', 'infermedica.con
 
         $http({
             method: 'GET',
-            url: '/js/credentials.json'
+            url: './js/credentials.json'
         }).success(function (data, status, headers, config) {
             credentials = data;
             Infermedica.init(credentials.infermedica.app_id, credentials.infermedica.app_key);
+        }).error(function(err){
+            console.error("eror loading creds file");
+            console.error(err);
+            
         });
 
 
